@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import { getBlogPosts } from 'app/blog/utils'
 
-export async function BlogPosts() {
-  const allPosts = await getBlogPosts()
+export function BlogPosts() {
+  const allPosts = getBlogPosts()
 
   return (
     <div className="flex flex-col gap-4">
       {allPosts
         .sort((a, b) => {
-          const dateA = a.metadata.date || a.metadata.publishedAt || '';
-          const dateB = b.metadata.date || b.metadata.publishedAt || '';
+          const dateA = a.metadata.publishedAt || '';
+          const dateB = b.metadata.publishedAt || '';
           
           if (new Date(dateA) > new Date(dateB)) {
             return -1
@@ -28,11 +28,11 @@ export async function BlogPosts() {
               </h3>
 
               <time className="text-xs text-neutral-600 dark:text-neutral-400">
-                {post.metadata.date || post.metadata.publishedAt}
+                {post.metadata.publishedAt}
               </time>
             </div>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {post.metadata.description || post.metadata.summary}
+              {post.metadata.summary}
             </p>
           </Link>
         ))}
