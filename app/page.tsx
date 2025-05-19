@@ -66,7 +66,7 @@ export default function Page() {
         <h3 className="mb-2 text-lg font-medium">Skills</h3>
         <div className="flex flex-wrap gap-2">
           <span className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-md text-sm">Python</span>
-          <span className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-md text-sm">Java</span>
+          {/* <span className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-md text-sm">Java</span> */}
           <span className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-md text-sm">Kubernetes (CKA)</span>
           <span className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-md text-sm">Docker</span>
           <span className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-md text-sm">AWS</span>
