@@ -1,0 +1,45 @@
+---
+title: Serverless Video Analysis Pipeline
+date: 2023-11-05
+description: An event-driven pipeline using AWS Lambda and containers for video processing
+---
+
+# Serverless Video Analysis Pipeline
+
+## Overview
+Designed an event-driven pipeline where S3 uploads trigger Lambda functions for frame extraction (via FFmpeg) and subsequent face recognition processing running in container images.
+
+## Technologies Used
+- AWS Lambda
+- Amazon S3
+- FFmpeg
+- OpenCV
+- Container Images
+- Python
+
+## Implementation Details
+The pipeline follows a serverless architecture pattern:
+1. Videos are uploaded to an S3 bucket
+2. Upload events trigger a Lambda function for initial processing
+3. The Lambda function extracts frames using FFmpeg
+4. A second Lambda function (running in a container) performs face recognition
+5. Results are stored back in S3
+
+## Optimization Strategies
+- Optimized Lambda container size to less than 1GB by using `python:3.8-slim`
+- Externalized model weights to S3 for faster loading
+- Implemented caching mechanisms to reduce cold starts by 45%
+- Achieved end-to-end processing of 100 videos in 300 seconds
+
+## Benefits of Serverless Approach
+- **Zero Maintenance**: No server management required
+- **Auto-scaling**: Automatic scaling to match incoming workload
+- **Cost Efficiency**: Pay only for actual execution time
+- **Simplicity**: Focus on application logic instead of infrastructure
+
+## Skills Demonstrated
+- Serverless Architecture Design
+- Container Optimization
+- Event-driven Programming
+- Cloud-native Development
+- Video Processing Pipelines
